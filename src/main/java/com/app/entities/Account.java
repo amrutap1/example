@@ -1,5 +1,6 @@
 package com.app.entities;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Account {
@@ -15,6 +16,9 @@ public class Account {
         this.accno = accno;
         this.branch = branch;
         this.doc = doc;
+    }
+
+    public Account(int accno, String abc, String s) {
     }
 
     public int getAccno() {
@@ -33,8 +37,8 @@ public class Account {
         this.branch = branch;
     }
 
-    public LocalDate getDoc() {
-        return doc;
+    public Date getDoc() {
+        return  Date;
     }
 
     public void setDoc(LocalDate doc) {

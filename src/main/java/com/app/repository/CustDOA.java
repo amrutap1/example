@@ -82,12 +82,12 @@ public class CustDOA {
             else
             {
                 sc.nextLine();
-                System.out.println("Enter student name: ");
-                String sname = sc.next();
-                System.out.println("Enter student email: ");
-                String email = sc.next();
-                String que = "UPDATE student set sname = '" + sname + "', email = '" + email + "'" +
-                        " WHERE rno= '" + roll + "' ";
+                System.out.println("Enter fname : ");
+                String fname = sc.next();
+                System.out.println("Enter lname : ");
+                String lname = sc.next();
+                String que = "UPDATE student set sname = '" + fname + "', email = '" + lname + "'" +
+                        " WHERE accno= '" + accno + "' ";
                 int ret = st.executeUpdate(que);
                 if(ret > 0)
                 {
@@ -104,21 +104,21 @@ public class CustDOA {
             throw new RuntimeException(e);
         }
     }
-    public void deleteStudent(int rollno)
+    public void deleteCust(int accno)
     {
         Scanner sc = new Scanner(System.in);
         ResultSet rst;
         try
         {
             Statement stmt = con.createStatement();
-            rst = stmt.executeQuery( "SELECT * FROM Student WHERE rno="+rollno);
+            rst = stmt.executeQuery( "SELECT * FROM Customer WHERE accno="+accno);
             if(!rst.next())
             {
                 System.out.println("This roll no.doesn't exist!!");
             }
             else
             {
-                String que = "delete from Student where rno = '" +rollno+ "' ";
+                String que = "delete from Customer where accno = '" +accno+ "' ";
                 int ret = stmt.executeUpdate(que);
                 if(ret > 0)
                 {
